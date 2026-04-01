@@ -51,7 +51,7 @@ void start_watchdog(const std::string& target_dir) {
                     std::cout << "      -> Action: Initiating Native Process Termination...\n";
 
                     // --- PULL THE TRIGGER ---
-                    terminate_process(full_path);
+                    terminate_process(full_path, entropy_score);
 
                 } else if (entropy_score < 5.5) {
                     std::cout << "      -> [INFO] Low Entropy. Likely benign text edit.\n";
