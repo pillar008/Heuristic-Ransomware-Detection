@@ -11,3 +11,5 @@ hids_daemon
 
 # Ignore the log files
 *.log
+hids_alerts.log
+hids_daemon
