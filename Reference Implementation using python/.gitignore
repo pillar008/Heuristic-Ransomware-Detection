@@ -1,0 +1,10 @@
+# Ignore the decoy trap folder and its contents
+decoys/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore compiled C++ binaries
+hids_daemon
+*.o
