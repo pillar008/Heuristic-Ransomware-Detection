@@ -35,3 +35,41 @@ graph TD
     P --> Q[Log Attack Forensics]
     Q --> R[Auto-Restore Decoy File]
     R --> E
+
+
+    ⚙️ Core Enterprise Features
+Kernel-Level Watchdog (inotify): Bypasses high-level file wrappers to monitor directory events natively, resulting in 0% idle CPU usage.
+
+Mathematical Heuristics: Utilizes Shannon Entropy to differentiate between benign text modifications and malicious cryptographic overwriting, eliminating false positives.
+
+Native /proc Crawler: Manually parses the Linux virtual filesystem to match active file descriptors to malicious PIDs without relying on external dependencies.
+
+Automated Incident Response: Features a persistent forensics logger (hids_alerts.log) and an Auto-Restore function to instantly rebuild compromised honeyfiles post-attack.
+
+🚀 Compilation & Usage
+1. Build the Native Daemon
+Ensure you have g++ installed, then compile the core engine:
+
+Bash
+g++ -std=c++17 src/main.cpp src/sentinel.cpp src/analyzer.cpp src/terminator.cpp -o hids_daemon
+2. Deploy the HIDS
+Run the compiled binary to deploy the decoys and arm the kernel hook:
+
+Bash
+./hids_daemon
+3. Simulate a Zero-Day Attack
+In a separate terminal, inject cryptographic randomness into a deployed decoy to trigger the active defense mechanism:
+
+Bash
+head -c 4096 /dev/urandom > decoys/admin_passwords.txt
+📜 Disclaimer
+This project was developed for academic research in Information Security and Privacy. The included testing scripts simulate ransomware behavior and should only be executed within isolated Virtual Machine environments.
+EOF
+
+
+Once that command finishes, run your standard git commands to sync the fixed documentation to your repository:
+
+```bash
+git add README.md
+git commit -m "Docs: Fixed README formatting and restored missing sections"
+git push
